@@ -10,6 +10,7 @@
   "dependencies": {
     "boxicons": "^2.0.7",
     "core-js": "^3.6.5",
+    "correios-brasil": "^2.2.2",
     "vue": "^2.6.11",
     "vue-meta": "^2.4.0",
     "vuex": "^3.6.2"

@@ -1,24 +1,32 @@
 <template>
   <div id="app" class="flex items-center justify-center h-screen bg-gray-50">
-    <Home />
+    {{ cepData }}
   </div>
 </template>
 
 <script>
-import Home from '@/components/Home'
+import { consultarCep } from 'correios-brasil'
 
 export default {
   name: 'App',
+  data () {
+    return {
+      cep: '',
+      cepData: {},
+    }
+  },
   metaInfo: {
-    title: 'Vue with Tailwind CSS',
+    title: 'Consultar CEP',
     titleTemplate: '%s | Template',
     htmlAttrs: {
       lang: 'pt-br',
     }
   },
-  components: {
-    Home
-  }
+  created () {
+    this.cep = prompt('Digite o CEP')
+    consultarCep(this.cep).then(response => this.cepData = response)
+
+  },
 }
 </script>
 
